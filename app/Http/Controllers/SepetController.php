@@ -15,7 +15,7 @@ class SepetController extends Controller
         return $sepet;
     }
     public function index($user){
-        $sepet = Sepet::with('get_products')->where('user_id',$user)->get();
+        $sepet = Sepet::with('get_products')->where('user_id','=',$user)->get();
 
         return view('client.sepet',['sepet'=>$sepet]);
     }

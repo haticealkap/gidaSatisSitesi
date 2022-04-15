@@ -24,11 +24,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [MainController::class,'index']);
 Route::get('/products', [MainController::class,'product']);
 Route::get('/account/{user_id}', [UsersController::class,'account']);
+Route::get('/product-details/{id}', [MainController::class,'productDetails']);
 
 Route::get('/login', function(){
     return view('client.login');
 })->middleware('userLogin');
-Route::get('/sepet/{user}', [SepetController::class,'index']);
+Route::get('sepet/{user}', [SepetController::class,'index']);
 Route::get('logout/',[AdminLoginController::class,'logout']);
 
 Route::prefix('/admin')->middleware('auth')->middleware('authLogin')->group(function(){

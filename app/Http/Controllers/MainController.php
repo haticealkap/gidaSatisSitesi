@@ -24,4 +24,9 @@ class MainController extends Controller
         return view('client.products',['products'=>$products]);
 
     }
+    public function productDetails($id){
+        $products = Product::find($id);
+        return view('client.product',['product'=>$products]);
+
+    }
 }

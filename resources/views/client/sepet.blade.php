@@ -30,7 +30,8 @@
                             <div class="alert alert-success">
                                 {{ session()->get('message') }}
                             </div>
-                        @endif                            @isset($sepet)
+                        @endif                            
+                        @isset($sepet)
                                 @foreach ($sepet as $sep)
                                 <tr>
                                     <td class="image product-thumbnail"><img src="{{asset('public/images/'.$sep->get_products[0]->image)}}" alt="#"></td>

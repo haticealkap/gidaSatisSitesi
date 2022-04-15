@@ -104,7 +104,7 @@
                                     </a>
                                 </div>
                                 <div class="product-action-1">
-                                    <a aria-label="Ürünü Görüntüle" class="action-btn hover-up" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
+                                    <a aria-label="Ürünü Görüntüle" class="action-btn hover-up" href="/product-details/{{$product['id']}}"><i class="fi-rs-eye"></i></a>
                                 </div>
                              
                             </div>
