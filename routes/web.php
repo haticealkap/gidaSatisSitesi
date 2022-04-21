@@ -7,6 +7,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SepetController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\UsersController;
+use App\Models\Product;
 use App\Models\Sepet;
 use Illuminate\Support\Facades\Route;
 
@@ -20,6 +21,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('delete-products',[ProductController::class,'allDelete']);
+Route::post('user-update',[UsersController::class,'update']);
 
 Route::get('/', [MainController::class,'index']);
 Route::get('/products', [MainController::class,'product']);
@@ -45,6 +48,10 @@ Route::prefix('/admin')->middleware('auth')->middleware('authLogin')->group(func
     });
     Route::get('/users', [UsersController::class,'index']);
     Route::get('/user/{id}', [UsersController::class,'dondurma']);
+    Route::get('/user-edit/{id}', [UsersController::class,'edit']);
+    Route::get('/user-delete/{id}', [UsersController::class,'destroy']);
+    Route::get('/user-add1', [UsersController::class,'add']);
+    Route::post('/admin/user-update/', [UsersController::class,'update']);
 
     Route::get('/products', [ProductController::class,'index']);
     Route::get('/product-edit/{id}', [ProductController::class,'edit2']);

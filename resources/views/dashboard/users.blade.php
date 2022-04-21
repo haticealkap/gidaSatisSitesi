@@ -5,6 +5,8 @@
         <h2 class="content-title">Kullanıcılar</h2>
         <div>
         </div>
+        <a href="/admin/user-add1" class="btn btn-sm btn-brand rounded font-sm mt-15">Yeni Kullanıcı</a>
+
     </div>
     <div class="card mb-4">
         <div class="card-body">
@@ -14,14 +16,16 @@
                    <div class="col">
                     <div class="card card-user">
                         <div class="card-header">
-                            <img class="img-md img-avatar" src="{{asset('evara-backend/assets/imgs/people/avatar1.jpg')}}" alt="User pic">
+                            <img class="img-md img-avatar" src="{{asset($user['image'] ? 'images/'.$user['image'] : 'evara-backend/assets/imgs/people/avatar1.jpg')}}" alt="User pic">
                         </div>
                         <div class="card-body">
                             <h5 class="card-title mt-50">{{$user['first_name'].' '.$user['last_name']}}</h5>
                             <div class="card-text text-muted">
                                 <p class="m-0">{{$user['type']}}</p>
                                 <p><template class="__cf_email__" data-cfemail="cea3afbcb7f7fe8eabb6afa3bea2abe0ada1a3">[email&#160;protected]</template></p>
+                                <a href="/admin/user-edit/{{$user->id}}" class="btn btn-sm btn-brand rounded font-sm mt-15">Düzenle</a>
                                 <a href="/admin/user/{{$user->id}}" class="btn btn-sm btn-brand rounded font-sm mt-15 {{$user['status'] ? 'bg-success' : 'bg-danger'}}">{{$user['status'] ? 'Aktif Hesap' : 'Dondurulmuş Hesap'}}</a>
+                                <a href="/admin/user-delete/{{$user->id}}" class="btn btn-sm btn-brand rounded font-sm mt-15">Sil</a>
                             </div>
                         </div>
                     </div>

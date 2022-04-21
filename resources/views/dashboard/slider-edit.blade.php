@@ -43,7 +43,7 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="input-upload">
-                                        <img src="{{asset('public/images/'.$slider['image'])}}" alt="">
+                                        <img src="{{asset('images/'.$slider['image'])}}" alt="">
                                     </div>
                                 </div>
                             </div> <!-- card end// -->

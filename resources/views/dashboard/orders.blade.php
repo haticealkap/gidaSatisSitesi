@@ -59,7 +59,7 @@
                                     {{$order->get_user->email}}
                                 </td>
                                 <td>
-                                   <img src="{{asset('public/images/'.$order->get_products[0]->image)}}" alt="" width="100">
+                                   <img src="{{asset('images/'.$order->get_products[0]->image)}}" alt="" width="100">
                                 </td>
                                
                                 <td>

@@ -65,7 +65,7 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="input-upload">
-                                        <img src="{{asset('public/images/'.$product['image'])}}" alt="">
+                                        <img src="{{asset('images/'.$product['image'])}}" alt="">
                                     </div>
                                 </div>
                             </div> <!-- card end// -->

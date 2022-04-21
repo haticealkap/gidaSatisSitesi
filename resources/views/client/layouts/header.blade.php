@@ -127,7 +127,7 @@
                                         <ul>
                                             <li v-for="(item,index) in shoping" :key="item.id" :index="index">
                                                 <div class="shopping-cart-img">
-                                                    <a href=""><img alt="Evara" :src="'/public/images/'+item.get_products[0].image"></a>
+                                                    <a href=""><img alt="Evara" :src="'/images/'+item.get_products[0].image"></a>
                                                 </div>
                                                 <div class="shopping-cart-title">
                                                     <h4><a href="">@{{item.get_products[0].name}}</a></h4>

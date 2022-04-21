@@ -17,7 +17,7 @@
                 @foreach ($products as $product)
                     <div class="col">
                         <div class="card card-product-grid">
-                            <a href="#" class="img-wrap"> <img src="{{asset('public/images/'.$product['image'])}}" alt="Product"> </a>
+                            <a href="#" class="img-wrap"> <img src="{{asset('images/'.$product['image'])}}" alt="Product"> </a>
                             <div class="info-wrap">
                                 <a href="#" class="title text-truncate">{{$product['name']}}</a>
                                 <div class="price mb-2">{{$product['promotion_price']}}</div> <!-- price.// -->

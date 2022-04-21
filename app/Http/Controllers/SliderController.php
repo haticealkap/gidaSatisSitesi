@@ -23,7 +23,7 @@ class SliderController extends Controller
         $slider->button_text = $request->button_text;
         if ($request->file('image')) {
             $name = date('YmdHi').$request->file('image')->getClientOriginalName();
-            $request->file('image')->move(public_path('public/images'), $name);
+            $request->file('image')->move(public_path('images'), $name);
             $slider->image = $name;
         } 
 
@@ -43,7 +43,7 @@ class SliderController extends Controller
         $slider->button_text = $request->button_text;
         if ($request->file('image')) {
             $name = date('YmdHi').$request->file('image')->getClientOriginalName();
-            $request->file('image')->move(public_path('public/images'), $name);
+            $request->file('image')->move(public_path('images'), $name);
             $slider->image = $name;
         } 
 

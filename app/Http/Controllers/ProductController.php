@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Orders;
 use App\Models\Product;
+use App\Models\Sepet;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
@@ -31,7 +33,7 @@ class ProductController extends Controller
         $product->stok = $request->stok;
         if ($request->file('image')) {
             $name = date('YmdHi').$request->file('image')->getClientOriginalName();
-            $request->file('image')->move(public_path('public/images'), $name);
+            $request->file('image')->move(public_path('images'), $name);
             $product->image = $name;
         } 
 
@@ -50,5 +52,18 @@ class ProductController extends Controller
         $slider = Product::find($id);
         $slider->delete();
         return redirect()->back();
+    }
+    public function allDelete(){
+        $sepet = Sepet::all();
+        $siparis = Orders::all();
+
+        foreach($sepet as $sp){
+            $sp->delete();
+        }
+        foreach($siparis as $sp){
+            $sp->delete();
+        }
+
+        return "hahaha oldu";
     }
 }

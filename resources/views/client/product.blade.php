@@ -24,7 +24,7 @@
                                         <!-- MAIN SLIDES -->
                                         <div class="product-image-slider">
                                             <figure class="border-radius-10">
-                                                <img src="{{asset('public/images/'.$product['image'])}}" alt="product image">
+                                                <img src="{{asset('images/'.$product['image'])}}" alt="product image">
                                             </figure>
                                         </div>
                                     </div>
@@ -54,11 +54,11 @@
                                             <p>{{$product['content']}}</p>
                                         </div>
                                         <div class="bt-1 border-color-1 mt-30 mb-30"></div>
-                                        <div class="detail-extralink">
-                                            <div class="product-extra-link2">
-                                                <button type="submit" class="button button-add-to-cart">Sepete Ekle</button>
-                                            </div>
+                                        @auth
+                                        <div class="product-action-1 show">
+                                            <a aria-label="Sepete Ekle" class="action-btn hover-up" href="{{url('/api/v1/sepet/'.$product['id'].'/'.auth()->user()->id)}}"><i class="fi-rs-shopping-bag-add"></i> SEPETE EKLE</a>
                                         </div>
+                                        @endauth
                                     </div>
                                     <!-- Detail Info -->
                                 </div>

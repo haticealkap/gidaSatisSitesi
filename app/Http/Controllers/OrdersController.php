@@ -15,7 +15,7 @@ class OrdersController extends Controller
         return view('dashboard.orders',['orders'=>$orders]);
     }
     public function store($user_id){
-        $sepettekiler = Sepet::with('get_products','get_user')->where('user_id',$user_id)->get();
+        $sepettekiler = Sepet::with('get_products')->where('user_id',$user_id)->get();
 
         foreach($sepettekiler as $sepet){
             $order  = new Orders();

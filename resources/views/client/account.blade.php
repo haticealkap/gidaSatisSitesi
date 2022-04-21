@@ -92,31 +92,45 @@
                                         <h5>Hesap Detayları</h5>
                                     </div>
                                     <div class="card-body">
-                                        <form method="post" name="enq">
+                                        <form method="POST" action="/user-update/"  enctype="multipart/form-data">
+                                            @csrf
                                             <div class="row">
+                                                <input type="hidden" name="id" value="{{auth()->user()->id}}">
+                                                <div class="form-group col-md-6">
+                                                    <label>Mevcut Görsel <span class="required">*</span></label>
+                                                    <img src="{{asset('images/'.$user->image)}}"  class="img-fluid" style="width: 200px; height:200px; border-radius: 50%" alt="">
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label>Yeni Görsel <span class="required">*</span></label>
+                                                    <input class="form-control square"  type="file" name="image" >
+                                                </div>
                                                 <div class="form-group col-md-6">
                                                     <label>First Name <span class="required">*</span></label>
-                                                    <input required="" class="form-control square" name="name" value="{{$user->first_name}}" type="text" disabled >
+                                                    <input class="form-control square"  value="{{$user->first_name}}" type="text"  name="first_name">
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label>Last Name <span class="required">*</span></label>
-                                                    <input required="" class="form-control square" value="{{$user->last_name}}" name="phone" disabled>
+                                                    <input class="form-control square" value="{{$user->last_name}}" name="last_name" >
                                                 </div>
                                                 <div class="form-group col-md-12">
                                                     <label>Email Address <span class="required">*</span></label>
-                                                    <input required="" class="form-control square" name="email" value="{{$user->email}}" type="email" disabled>
+                                                    <input class="form-control square" name="email" value="{{$user->email}}" type="email" >
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label>Adres1 <span class="required">*</span></label>
-                                                    <input required="" class="form-control square" value="{{$user->state}}" name="phone" disabled>
+                                                    <input class="form-control square" value="{{$user->state}}" name="state" >
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label>Ülke <span class="required">*</span></label>
-                                                    <input required="" class="form-control square" value="{{$user->country}}" name="phone" disabled>
+                                                    <input class="form-control square" value="{{$user->country}}" name="country" >
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label>Telefon <span class="required">*</span></label>
+                                                    <input class="form-control square" value="{{$user->phone}}" name="phone" >
                                                 </div>
                                                 <div class="form-group col-md-12">
-                                                    <label>Confirm Password <span class="required">*</span></label>
-                                                    <input required="" class="form-control square" name="cpassword" type="password">
+                                                    <label>Password <span class="required">*</span></label>
+                                                    <input class="form-control square" name="password" value="{{bcrypt($user->password)}}" type="password">
                                                 </div>
                                                 <div class="col-md-12">
                                                     <button type="submit" class="btn btn-fill-out submit" name="submit" value="Submit">Save</button>

@@ -17,7 +17,7 @@
                         @foreach ($sliders as $slider)
                             <div class="col">
                                 <div class="card card-product-grid">
-                                    <a href="#" class="img-wrap"> <img src="{{asset('public/images/'.$slider['image'])}}" alt="Product"> </a>
+                                    <a href="#" class="img-wrap"> <img src="{{asset('images/'.$slider['image'])}}" alt="Product"> </a>
                                     <div class="info-wrap">
                                         <a href="#" class="title text-truncate">{{$slider['title']}}</a>
                                         <div class="price mb-2">{{$slider['subtitle']}}</div> <!-- price.// -->

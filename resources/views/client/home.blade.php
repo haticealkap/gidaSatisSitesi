@@ -18,7 +18,7 @@
                     </div>
                     <div class="col-lg-7 col-md-6">
                         <div class="single-slider-img single-slider-img-1">
-                            <img class="animated slider-1-1" src="{{ asset('public/images/'.$slider['image'])}}" alt="">
+                            <img class="animated slider-1-1" src="{{ asset('images/'.$slider['image'])}}" alt="">
                         </div>
                     </div>
                 </div>
@@ -99,8 +99,8 @@
                             <div class="product-img-action-wrap">
                                 <div class="product-img product-img-zoom">
                                     <a href="shop-product-right.html">
-                                        <img class="default-img" src="{{ asset('public/images/'.$product['image'])}}" alt="">
-                                        <img class="hover-img" src="{{ asset('public/images/'.$product['image'])}}" alt="">
+                                        <img class="default-img" src="{{ asset('images/'.$product['image'])}}" alt="">
+                                        <img class="hover-img" src="{{ asset('images/'.$product['image'])}}" alt="">
                                     </a>
                                 </div>
                                 <div class="product-action-1">

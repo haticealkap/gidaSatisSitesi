@@ -34,7 +34,7 @@
                         @isset($sepet)
                                 @foreach ($sepet as $sep)
                                 <tr>
-                                    <td class="image product-thumbnail"><img src="{{asset('public/images/'.$sep->get_products[0]->image)}}" alt="#"></td>
+                                    <td class="image product-thumbnail"><img src="{{asset('images/'.$sep->get_products[0]->image)}}" alt="#"></td>
                                     <td class="product-des product-name">
                                         <h5 class="product-name"><a href="shop-product-right.html">{{$sep->get_products[0]->name}}</a></h5>
                                         <p class="font-xs">{{$sep->get_products[0]->content}}

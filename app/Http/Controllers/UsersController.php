@@ -45,12 +45,38 @@ class UsersController extends Controller
         $user->state = $request->state;
         $user->phone = $request->phone;
         $user->country = $request->country;
-        
+        if ($request->file('image')) {
+            $name = date('YmdHi').$request->file('image')->getClientOriginalName();
+            $request->file('image')->move(public_path('images'), $name);
+            $user->image = $name;
+        } 
         $user->save();
         return redirect()->back()->withErrors(['İşlem Başarılı Giriş Yapınız']);
     }
-    public function edit(){
+    public function update(Request $request){
 
+        $user = User::find($request->id);
+        $user->first_name = $request->first_name;
+        $user->last_name = $request->last_name;
+        $user->email = $request->email;
+        $user->password = bcrypt($request->password);
+        $user->state = $request->state;
+        $user->phone = $request->phone;
+        $user->country = $request->country;
+        if ($request->file('image')) {
+            $name = date('YmdHi').$request->file('image')->getClientOriginalName();
+            $request->file('image')->move(public_path('images'), $name);
+            $user->image = $name;
+        } 
+        $user->save();
+        return redirect()->back()->withErrors(['İşlem Başarılı Giriş Yapınız']);
+    }
+    public function edit($id){
+        $user  = User::find($id);
+        return view('dashboard.users-edit',['user'=>$user]);
+    }
+    public function add(){
+        return view('dashboard.users-add');
     }
     public function destroy($id){
         $user = User::find($id);
