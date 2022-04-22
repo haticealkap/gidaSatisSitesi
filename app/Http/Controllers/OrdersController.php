@@ -45,10 +45,5 @@ class OrdersController extends Controller
         
         return redirect()->back();
     }
-    public function edit(){
 
-    }
-    public function destroy(){
-
-    }
 }

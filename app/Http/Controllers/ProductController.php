@@ -49,8 +49,8 @@ class ProductController extends Controller
 
     }
     public function destroy($id){
-        $slider = Product::find($id);
-        $slider->delete();
+        $product = Product::find($id);
+        $product->delete();
         return redirect()->back();
     }
     public function allDelete(){
@@ -64,6 +64,6 @@ class ProductController extends Controller
             $sp->delete();
         }
 
-        return "hahaha oldu";
+        return "Tüm Sipariş ve Sepet Temizlendi";
     }
 }
