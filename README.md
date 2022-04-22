@@ -41,7 +41,7 @@ Laravel, MySQL
 Projeyi klonlayın
 
 ```bash
-  git clone https://link-to-project
+  git clone https://github.com/haticealkap/gidaSatisSitesi
 ```
 
 Proje dizinine gidin
